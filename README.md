@@ -150,8 +150,8 @@ public class Main {
                 }
             }
         }
-        if(min!=n) System.out.println(min);
-        else System.out.println("NO");
+        if(min==n) System.out.println("NO");
+        else System.out.println(min);
     }
 }
 ```
