@@ -86,7 +86,7 @@ public class Main {
 ```java
 import java.util.Scanner;
 public class Main {
-      public static boolean pr(int n){
+    public static boolean pr(int n){
         if(n<2)return false;
         int j = 2;
         boolean f = true;
@@ -99,15 +99,14 @@ public class Main {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int n = in.nextInt();
-        boolean k = true;
-        while(k){
+        while(n!=-1){
             boolean f = false;
             while(n>0){
                 int j=2;
                 while(j*j<=n){
                     if(n%j==0){
                         if(pr(j) && pr(n/j)){
-                            System.out.println(n);
+                            System.out.print(n + " ");
                             f = true;
                             n = 0;
                         }
@@ -116,13 +115,9 @@ public class Main {
                 }
                 n--;
             }
-            if(!f) {
-                System.out.println(-1);
-                k = false;
-            } else {
-                n = in.nextInt();
+            if(!f) System.out.print(-1 + " ");
+            n = in.nextInt();
             }
-        }
     }
 }
 ```
@@ -150,7 +145,7 @@ public class Main {
         int min=n;
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                if(a[i]==a[j] && i!=j){
+                if(Math.abs(a[i]-a[j]) < 1e-9 && i!=j){
                     if(Math.abs(i-j)<min)min=Math.abs(i-j);
                 }
             }
